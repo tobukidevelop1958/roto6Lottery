@@ -1,4 +1,5 @@
-﻿using System;
+﻿// 使い方 : main()関数のコメントを見て下さい
+using System;
 
 namespace miniroto6
 {
@@ -31,6 +32,7 @@ namespace miniroto6
 
         static void Main(string[] args)
         {
+            // 使用方法 : date1, atari1, date2を毎回設定します。
             // roto6の抽選時刻、当り番号を指定する
             // 前回抽選時刻（予想）
             DateTime date1 = new DateTime(2020, 12, 14, 21, 0, 0);
