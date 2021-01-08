@@ -35,11 +35,11 @@ namespace miniroto6
             // 使用方法 : date1, atari1, date2を毎回設定します。
             // roto6の抽選時刻、当り番号を指定する
             // 前回抽選時刻（予想）
-            DateTime date1 = new DateTime(2020, 12, 14, 21, 0, 0);
+            DateTime date1 = new DateTime(2021, 1, 7, 21, 0, 0);
             // 前回当り番号
-            int[] atari1 = { 17, 21, 26, 33, 36, 38 };
+            int[] atari1 = { 4, 5, 27, 28, 35, 41 };
             // 今回抽選時刻（予想）
-            DateTime date2 = new DateTime(2020, 12, 17, 21, 0, 0);
+            DateTime date2 = new DateTime(2021, 1, 11, 21, 0, 0);
             // 乱数初期化
             string datestr1 = date1.ToString("yyyyMMddHH");
             int random1 = int.Parse(datestr1);
