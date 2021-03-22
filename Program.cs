@@ -48,17 +48,17 @@ namespace miniroto6
             // 使用方法 : date1, atari1, date2を毎回設定します。
             // roto6の抽選時刻、当り番号を指定する
             // 前回抽選時刻（予想）
-            DateTime date1 = new DateTime(2021, 1, 21, 19, 0, 0);
+            DateTime date1 = new DateTime(2021, 3, 18, 19, 0, 0);
             // 前回当り番号
-            int[] atari1 = { 7, 8, 16, 32, 41, 42 };
+            int[] atari1 = { 2, 8, 29, 31, 32, 33 };
             // 今回抽選時刻（予想）
-            DateTime date2 = new DateTime(2021, 1, 25, 19, 0, 0);
+            DateTime date2 = new DateTime(2021, 2, 22, 19, 0, 0);
             // 乱数初期化
-            string datestr1 = date1.ToString("yyyyMMddHH");
+            string datestr1 = date1.ToString("MMddHHmmss");
             int random1 = int.Parse(datestr1);
             Random rnd1;
             rnd1 = new System.Random(random1);
-            string datestr2 = date2.ToString("yyyyMMddHH");
+            string datestr2 = date2.ToString("MMddHHmmss");
             int random2 = int.Parse(datestr2);
             Random rnd2;
             rnd2 = new System.Random(random2);
@@ -90,11 +90,17 @@ namespace miniroto6
                     string rotostr;
                     // くじ計算
                     Console.WriteLine("ロト６　当たりくじ番号表示");
-                    for (j=0; j< 3; j++) { 
-                        for (i = 0; i < num1; i++)
+                    for (j=0; j< 1; j++) { 
+                        for (i = 0; i < num1-1; i++)
                         {
                             genrotnum(rnd2, ref roto);
                         }
+                        genrotnum(rnd2, ref roto);
+                        rotostr = getrotostring(roto);
+                        Console.WriteLine("ロト６ = {0}", rotostr);
+                        genrotnum(rnd2, ref roto);
+                        rotostr = getrotostring(roto);
+                        Console.WriteLine("ロト６ = {0}", rotostr);
                         genrotnum(rnd2, ref roto);
                         rotostr = getrotostring(roto);
                         Console.WriteLine("ロト６ = {0}", rotostr);
