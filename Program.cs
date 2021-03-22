@@ -11,10 +11,23 @@ namespace miniroto6
 
         static void genrotnum(Random rnd1, ref int[] roto)
         {
+            int inum, i, ifnd;
             int icnt = 0;
             while (icnt < roto.Length)
             {
                 int num = rnd1.Next(0, src.Length);
+                inum = src[num];
+                ifnd = 0;
+                // 同じ番号を弾く
+                for (i=0; i<icnt; i++)
+                {
+                    if (inum == roto[i])
+                    {
+                        ifnd = 1;
+                        break;
+                    }
+                }
+                if (ifnd == 1) continue;
                 roto[icnt] = src[num];
                 icnt++;
             }
@@ -35,11 +48,11 @@ namespace miniroto6
             // 使用方法 : date1, atari1, date2を毎回設定します。
             // roto6の抽選時刻、当り番号を指定する
             // 前回抽選時刻（予想）
-            DateTime date1 = new DateTime(2021, 1, 7, 21, 0, 0);
+            DateTime date1 = new DateTime(2021, 1, 21, 19, 0, 0);
             // 前回当り番号
-            int[] atari1 = { 4, 5, 27, 28, 35, 41 };
+            int[] atari1 = { 7, 8, 16, 32, 41, 42 };
             // 今回抽選時刻（予想）
-            DateTime date2 = new DateTime(2021, 1, 11, 21, 0, 0);
+            DateTime date2 = new DateTime(2021, 1, 25, 19, 0, 0);
             // 乱数初期化
             string datestr1 = date1.ToString("yyyyMMddHH");
             int random1 = int.Parse(datestr1);
@@ -50,8 +63,8 @@ namespace miniroto6
             Random rnd2;
             rnd2 = new System.Random(random2);
             // 変数初期化
-            // 7個の乱数を取り出し、先頭6個を採用する
-            int[] roto = { 0, 0, 0, 0, 0, 0, 0};
+            // 6個の乱数を取り出す
+            int[] roto = { 0, 0, 0, 0, 0, 0};
             int i, j;
             int num = 0;
             int ifind = 0;
@@ -73,30 +86,26 @@ namespace miniroto6
                 if (ifind == atari1.Length)
                 {
                     Console.WriteLine("前当たりくじ試行回数 = {0}", num);
-                    int num1 = num - 2;
+                    int num1 = num;
                     string rotostr;
                     // くじ計算
-                    Console.WriteLine("ミニロト６　当たりくじ番号表示");
-                    for (i = 0; i < num1; i++)
-                    {
+                    Console.WriteLine("ロト６　当たりくじ番号表示");
+                    for (j=0; j< 3; j++) { 
+                        for (i = 0; i < num1; i++)
+                        {
+                            genrotnum(rnd2, ref roto);
+                        }
                         genrotnum(rnd2, ref roto);
+                        rotostr = getrotostring(roto);
+                        Console.WriteLine("ロト６ = {0}", rotostr);
                     }
-                    genrotnum(rnd2, ref roto);
-                    rotostr = getrotostring(roto);
-                    Console.WriteLine("ミニロト６ = {0}", rotostr);
-                    genrotnum(rnd2, ref roto);
-                    rotostr = getrotostring(roto);
-                    Console.WriteLine("ミニロト６ = {0}", rotostr);
-                    genrotnum(rnd2, ref roto);
-                    rotostr = getrotostring(roto);
-                    Console.WriteLine("ミニロト６ = {0}", rotostr);
                     break;
                 }
                 ifind = 0;
                 num += 1;
                 if (num % 10000 == 0)
                 {
-                    Console.WriteLine("前回あたり回数計算 = {0}", num);
+                    Console.WriteLine("前回あたり回数計算・途中経過回数 = {0}", num);
                 }
             }
         }
