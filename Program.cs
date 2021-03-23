@@ -90,17 +90,12 @@ namespace miniroto6
                     string rotostr;
                     // くじ計算
                     Console.WriteLine("ロト６　当たりくじ番号表示");
-                    for (j=0; j< 1; j++) { 
-                        for (i = 0; i < num1-1; i++)
-                        {
-                            genrotnum(rnd2, ref roto);
-                        }
+                    for (i = 0; i < num1-1; i++)
+                    {
                         genrotnum(rnd2, ref roto);
-                        rotostr = getrotostring(roto);
-                        Console.WriteLine("ロト６ = {0}", rotostr);
-                        genrotnum(rnd2, ref roto);
-                        rotostr = getrotostring(roto);
-                        Console.WriteLine("ロト６ = {0}", rotostr);
+                    }
+                    for (j = 0; j < 3; j++)
+                    {
                         genrotnum(rnd2, ref roto);
                         rotostr = getrotostring(roto);
                         Console.WriteLine("ロト６ = {0}", rotostr);
