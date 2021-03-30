@@ -13,6 +13,10 @@ namespace miniroto6
         {
             int inum, i, ifnd;
             int icnt = 0;
+            for(i=0; i<roto.Length; i++)
+            {
+                roto[i] = 0;
+            }
             while (icnt < roto.Length)
             {
                 int num = rnd1.Next(0, src.Length);
@@ -48,11 +52,11 @@ namespace miniroto6
             // 使用方法 : date1, atari1, date2を毎回設定します。
             // roto6の抽選時刻、当り番号を指定する
             // 前回抽選時刻（予想）
-            DateTime date1 = new DateTime(2021, 3, 25, 19, 0, 0);
+            DateTime date1 = new DateTime(2021, 3, 29, 19, 0, 0);
             // 前回当り番号
-            int[] atari1 = { 2, 8, 29, 31, 32, 33 };
+            int[] atari1 = { 4, 6, 10, 19, 28, 38 };
             // 今回抽選時刻（予想）
-            DateTime date2 = new DateTime(2021, 3, 29, 19, 0, 0);
+            DateTime date2 = new DateTime(2021, 4, 2, 19, 0, 0);
             // 乱数初期化
             string datestr1 = date1.ToString("MMddHHmmss");
             int random1 = int.Parse(datestr1);
@@ -86,11 +90,14 @@ namespace miniroto6
                 if (ifind == atari1.Length)
                 {
                     Console.WriteLine("前当たりくじ試行回数 = {0}", num);
+                    // 3/25 19時 抽選試行回数   2024555回
+                    // 3/29 19時 抽選試行回数   1635213回  4等当り
+                    // 4/02 19時 抽選試行回数   4139645回
                     int num1 = num;
                     string rotostr;
                     // くじ計算
                     Console.WriteLine("ロト６　当たりくじ番号表示");
-                    for (i = 0; i < num1-1; i++)
+                    for (i = 0; i < num1; i++)
                     {
                         genrotnum(rnd2, ref roto);
                     }
