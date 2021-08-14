@@ -1,0 +1,13 @@
+C:\Users\moonb\source\repos\C#Project\miniroto6\obj\Debug\netcoreapp3.1\miniroto6.csprojAssemblyReference.cache
+C:\Users\moonb\source\repos\C#Project\miniroto6\obj\Debug\netcoreapp3.1\miniroto6.AssemblyInfoInputs.cache
+C:\Users\moonb\source\repos\C#Project\miniroto6\obj\Debug\netcoreapp3.1\miniroto6.AssemblyInfo.cs
+C:\Users\moonb\source\repos\C#Project\miniroto6\obj\Debug\netcoreapp3.1\miniroto6.csproj.CoreCompileInputs.cache
+C:\Users\moonb\source\repos\C#Project\miniroto6\bin\Debug\netcoreapp3.1\miniroto6.exe
+C:\Users\moonb\source\repos\C#Project\miniroto6\bin\Debug\netcoreapp3.1\miniroto6.deps.json
+C:\Users\moonb\source\repos\C#Project\miniroto6\bin\Debug\netcoreapp3.1\miniroto6.runtimeconfig.json
+C:\Users\moonb\source\repos\C#Project\miniroto6\bin\Debug\netcoreapp3.1\miniroto6.runtimeconfig.dev.json
+C:\Users\moonb\source\repos\C#Project\miniroto6\bin\Debug\netcoreapp3.1\miniroto6.dll
+C:\Users\moonb\source\repos\C#Project\miniroto6\bin\Debug\netcoreapp3.1\miniroto6.pdb
+C:\Users\moonb\source\repos\C#Project\miniroto6\obj\Debug\netcoreapp3.1\miniroto6.dll
+C:\Users\moonb\source\repos\C#Project\miniroto6\obj\Debug\netcoreapp3.1\miniroto6.pdb
+C:\Users\moonb\source\repos\C#Project\miniroto6\obj\Debug\netcoreapp3.1\miniroto6.genruntimeconfig.cache
